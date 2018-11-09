@@ -17,10 +17,10 @@ g2=random.randint(0,255)
 b2=random.randint(0,255)
 image=Image.new('RGB',(100,100),color=(r,g,b))
 ##definit la taille et lemplacement de la lettre 
-fnt = ImageFont.truetype('arial.tff',15)
+fnt = font = ImageFont.truetype("/home/niels/.local/share/fonts/arial.ttf",60)
 ## ecrir la lettre sur l'image 
 d = ImageDraw.Draw(image)
-d.text((80,80),letterlist[index],font=fnt,fill=(r2,g2,b2))
+d.text((20,20),letterlist[index],font=fnt,fill=(r2,g2,b2))
 
 image.save('aleatoireletter.png')
 
