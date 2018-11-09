@@ -79,7 +79,7 @@ int main()
     init_sdl();
 
     //Load image from a path 
-    image_surface = load_image("my_image.jpg");
+    image_surface = load_image("testcut.png");
 
     // Display the image.
      screen_surface= display_image(image_surface);
@@ -100,7 +100,13 @@ int main()
     int width = image_surface->w;
     int height = image_surface->h;
 
-    int histogram[GRAYLEVEL]={0};//génération histogramme remplit de 0
+    //génération histogramme remplit de 0
+    int histogram[GRAYLEVEL];
+    for (int i=0;i<GRAYLEVEL;i++)
+    {
+        histogram[i]=0;
+    }
+
     double proba[GRAYLEVEL],omega[GRAYLEVEL];// probabilté de niveau de gris
     double myu[GRAYLEVEL]; //valeur de séparation
     double sigma[GRAYLEVEL];// variance interclass
@@ -176,8 +182,6 @@ int main()
             put_pixel(image_surface, x, y, pixel);
         }
     }
-
-
     //update screen surface
     update_surface(screen_surface,image_surface);
 
